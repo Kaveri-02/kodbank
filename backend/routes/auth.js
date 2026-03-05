@@ -4,7 +4,9 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const pool = require('../db');
 const authMiddleware = require('../middleware/authMiddleware');
-require('dotenv').config();
+
+// JWT_SECRET should be in process.env
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // ─────────────────────────────────────────────────────────────
 // POST /api/register
