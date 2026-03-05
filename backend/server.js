@@ -12,8 +12,15 @@ const PORT = process.env.PORT || 5000;
 
 // ─── Middleware ───────────────────────────────────────────────
 app.use(cors({
-    origin: 'http://localhost:3000', // Next.js frontend
-    credentials: true               // Allow cookies
+    origin: [
+        'http://localhost:3000',
+        'http://127.0.0.1:3000',
+        'http://192.168.56.1:3000',
+        'https://kodbank.vercel.app',
+        'https://kodbank-git-main-kaveri-02s-projects.vercel.app',
+        'https://kodbank-kaveri-02s-projects.vercel.app'
+    ],
+    credentials: true
 }));
 app.use(express.json());
 app.use(cookieParser());

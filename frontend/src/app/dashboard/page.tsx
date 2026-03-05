@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
-const API = 'http://localhost:5000/api';
+const API = process.env.NEXT_PUBLIC_API_URL || '/api';
 
 /* ──────────────────────────────────────────────
    Lightweight canvas confetti (no external lib)
